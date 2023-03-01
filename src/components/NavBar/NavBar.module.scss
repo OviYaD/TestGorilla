@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+.navbar{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 1px -1px #88888829, 0 1px 1px #8888881d, 0 1px 3px #88888818;
+    display: flex;
+    font-family:  "Open Sans",Helvetica Neue,Arial,sans-serif;
+    position: fixed;
+    top:0;
+    .logo{
+        margin-left: 5%;
+        width: 16%;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        img{
+            width: 150px;
+        }
+    }
+    .navItems{
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+        font-weight: 400;
+        width: 48%;
+        .itemActive{
+            border-top-color: #276678 !important;
+            font-weight: 700;
+
+        }
+        .item{
+            background: inherit;
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            height: 80px;
+            text-decoration: none!important;
+            display: flex;
+            align-items: center;
+            margin: 0 18px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            color: currentColor;
+        }
+    }
+    .navOptions{
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+        font-weight: 400;
+        align-items: center;
+
+        &>div{
+            margin-right: 0.8rem;
+        }
+
+        .user{
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin-left: 0.9rem;
+        }
+
+        .icon{
+            font-weight: 600;
+        }
+
+        .btn{
+            // display: flex;
+            font-size: 14px;
+            font-weight: 501;
+            line-height: normal;
+            border: 1px solid black;
+            box-shadow: 0 0 #0003, 0 0 #00000024, 0 0 #0000001f;
+            min-width: 48px;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+    }
+}
+.flexC{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 958px){
+    .navbar{
+        .navItems{
+            display: none;
+        }
+        .navOptions{
+            margin-left:auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px){
+
+    .navbar{
+        .navItems{
+            width: 40%;
+        }
+    }
+}
+
+@media only screen and (max-width: 463px){
+
+    .navbar{
+        .logo{
+            width: 50%;
+        }
+        .navItems{
+            width: 40%;
+        }
+        .navOptions{
+            .btn{
+                display: none;
+            }
+        }
+    }
+}
