@@ -3,7 +3,7 @@ import style from "./Footer.module.scss";
 
 export default function Footer(params) {
     return (<>
-        <div className={style.footer}>
+        <div className={[style.footer, "max-w-full"].join(" ")}>
             <div className=''>
                 <div className={style.btn}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
