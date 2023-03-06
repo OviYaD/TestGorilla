@@ -2,9 +2,24 @@ import React, { useState, useEffect } from 'react';
 import NameAssessment from '../NameAssessment/NameAssessment';
 import SelectTests from '../SelectTests/SelectTests';
 import StatusBar from '../StatusBar/StatusBar';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../NavBar/Navbar';
 
 export default function CreateNewAssessment(params) {
+    const { tab } = useParams();
+    const navigate = useNavigate();
+
+    const handleNext = () => {
+        if (tab === "new") {
+            navigate("/assessment/create/select");
+        }
+        if (tab === "select") {
+            navigate("/assessment");
+        }
+    }
     return (<>
+        <Navbar></Navbar>
         <div className="p-16 container  mt-14 min-h-screen max-h-fit max-w-full bg-white mr-0 ">
             <div className=" flex justify-between items-center">
                 <div className='flex'>
@@ -31,13 +46,15 @@ export default function CreateNewAssessment(params) {
                     </div>
                 </div>
                 <div className="btn-p cursor-pointer flex justify-center space-x-1 items-center">
-                    <div>Next step</div>
+                    <div onClick={handleNext}>Next step</div>
                 </div>
             </div>
-
             <StatusBar></StatusBar>
-            {/* <NameAssessment></NameAssessment> */}
             <SelectTests></SelectTests>
+
+            {/* <NameAssessment></NameAssessment> */}
+            {tab === "new" && <NameAssessment></NameAssessment>}
+            {tab === "select" && <SelectTests></SelectTests>}
         </div>
     </>)
 };
