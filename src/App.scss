@@ -5,3 +5,23 @@
     font-family: "Open Sans";
 }
 
+.tag{
+    clip-path: polygon(0 0,30% 0,100% 70%,100% 100%);
+    width: 70px;
+    height: 70px;
+    min-height: 70px;
+    min-width: 70px;
+    div{
+        display: flex;
+        padding-bottom: 15px;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        transform: rotate(45deg);
+        justify-content: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        // font-size: 1rem;
+        color: #fff;
+    }
+}
