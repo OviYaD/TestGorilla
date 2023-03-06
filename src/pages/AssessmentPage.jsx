@@ -2,15 +2,23 @@ import React, { useState, useEffect } from 'react';
 import style from "./AssessmentPage.scss";
 import Footer from '../components/Footer/Footer';
 import AssessmentsTable from '../components/AssessmentsTable/AssessmentsTable';
+import Navbar from '../components/NavBar/Navbar';
+import { useNavigate, useParams } from 'react-router-dom';
+
 
 export default function AssessmentPage(params) {
     const [showList, setShowList] = useState("active");
-    const [playVideo, setPlayVideo] = useState(false)
+    const [playVideo, setPlayVideo] = useState(false);
+
+    const navigate = useNavigate();
+    const { tab } = useParams();
+
     return (<>
+        <Navbar></Navbar>
         <div className="p-16 container  mt-14 min-h-screen max-h-fit max-w-full bg-[#f5f6f6] mr-0 ">
             <div className=" flex justify-between items-center">
                 <div className='header font-bold text-xl'>My assessments </div>
-                <div className="btn-p cursor-pointer flex justify-center space-x-1 items-center">
+                <div className="btn-p cursor-pointer flex justify-center space-x-1 items-center" onClick={() => navigate("/assessment/create")}>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
