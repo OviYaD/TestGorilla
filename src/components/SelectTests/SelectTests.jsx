@@ -5,6 +5,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import TestLists from '../TestLists/TestLists';
 
 
 export default function SelectTests(params) {
@@ -75,6 +76,8 @@ export default function SelectTests(params) {
                     </Select>
                 </div>
             </div>
+            <div className='mt-16 text-sm'>These are the tests currently available in <span className="font-semibold">English</span> .</div>
+            <TestLists></TestLists>
         </div>
     </>
 };
