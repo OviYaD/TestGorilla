@@ -2,3 +2,21 @@
     min-height:100px;
     background: alpha($color: #000000);
 }
+.item{
+    .options{
+        visibility: hidden;
+    }
+}
+.item:hover{
+    .options{
+        visibility: visible;
+    }
+}
+.custom-type-icon{
+    color:#46a997
+}
+.type-container:hover{
+    .custom-type-icon{
+        color:white;
+    }
+}

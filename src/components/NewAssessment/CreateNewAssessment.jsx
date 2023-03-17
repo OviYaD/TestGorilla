@@ -5,6 +5,7 @@ import StatusBar from '../StatusBar/StatusBar';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../NavBar/Navbar';
+import AddQuestions from '../AddQuestions/AddQuestions';
 
 export default function CreateNewAssessment(params) {
     const { tab } = useParams();
@@ -50,8 +51,8 @@ export default function CreateNewAssessment(params) {
                 </div>
             </div>
             <StatusBar></StatusBar>
-            <SelectTests></SelectTests>
-
+            {/* <SelectTests></SelectTests> */}
+            <AddQuestions></AddQuestions>
             {/* <NameAssessment></NameAssessment> */}
             {tab === "new" && <NameAssessment></NameAssessment>}
             {tab === "select" && <SelectTests></SelectTests>}
